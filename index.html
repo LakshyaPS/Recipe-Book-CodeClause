@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Storage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-dark text-light py-4">
+    <div class="container text-center">
+      <h1 class="mb-0">Recipe Storage</h1>
+    </div> 
+  </header>
+  <main class="py-5">
+    <div class="container">
+      <div id="recipe-container" class="row">
+        <!-- Sample recipes will be displayed here -->
+      </div>
+    </div>
+  </main>
+  <footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2024 Recipe Storage</p>
+    </div>
+  </footer>
+
+  <!-- Recipe Details Modal -->
+  <div id="recipeModal" class="modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="recipeModalTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="text-center mb-4" id="recipeModalImageContainer">
+            <img src="" alt="Recipe Image" id="recipeModalImage" style="max-width: 100%;">
+          </div>
+          <div id="recipeModalContent">
+            <h4>Ingredients:</h4>
+            <ul id="recipeModalIngredients" class="list-unstyled"></ul>
+            <button id="editRecipeBtn" class="btn btn-primary btn-sm mt-3">Edit Recipe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Recipe Modal -->
+  <div id="addRecipeModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Recipe</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="addRecipeForm">
+            <div class="form-group">
+              <label for="recipeName">Recipe Name:</label>
+              <input type="text" class="form-control" id="recipeName" required>
+            </div>
+            <div class="form-group">
+              <label for="recipeIngredients">Ingredients:</label>
+              <textarea class="form-control" id="recipeIngredients" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="recipeImage">Recipe Image:</label>
+              <input type="file" class="form-control-file" id="recipeImage">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Recipe</button>
+          </form>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  <!-- Add Recipe Button -->
+  <button id="add-recipe-btn" class="btn btn-primary btn-lg rounded-circle position-fixed" style="bottom: 20px; right: 20px;">+</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+ 
